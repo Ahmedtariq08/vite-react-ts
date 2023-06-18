@@ -1,7 +1,9 @@
 import { HashRouter, Route, Routes } from 'react-router-dom';
+import { ThemeProvider } from '@mui/material/styles';
 import Login from './pages/login/Login';
 import Dashboard from './pages/dashboard/Dashboard';
 import PageNotFound from './pages/PageNotFound';
+import theme from './styles/mui/theme';
 
 function App() {
   return (
@@ -16,9 +18,11 @@ function App() {
 
 function WrappedApp() {
   return (
-    <HashRouter>
-      <App />
-    </HashRouter>
+    <ThemeProvider theme={theme}>
+      <HashRouter>
+        <App />
+      </HashRouter>
+    </ThemeProvider>
   );
 }
 
