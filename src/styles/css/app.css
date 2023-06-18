@@ -1,0 +1,9 @@
+:root {
+    --bg-light-black: #312d2a;
+    --bg-light-grey: #5c5651;
+    --bg-grey-white: #fbf9f8;
+}
+
+body {
+    margin: 0;
+}

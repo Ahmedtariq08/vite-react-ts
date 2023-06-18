@@ -1,0 +1,68 @@
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.signin-container {
+    height: 28vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: var(--bg-light-black);
+}
+
+.head1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 400;
+    font-size: 1.6vw;
+    color: #fff;
+    width: 36vw;
+    margin-bottom: 0.5rem;
+}
+
+.head2 {
+    font-family: Georgia;
+    font-size: 2vw;
+    color: #fff;
+    text-align: left;
+    letter-spacing: 0.02em;
+    margin-bottom: 2.5rem;
+    width: 36vw;
+}
+
+.input-fields-container {
+    height: 55vh;
+    background-color: var(--bg-grey-white);
+}
+
+.login-footer {
+    display: flex;
+    flex-direction: column;
+    padding: 0 6rem 0 6rem;
+}
+
+.footer-logo {
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: solid 1px #d5d5d7;
+}
+
+.logo {
+    height: 6.25rem;
+    width: 6.25rem;
+    margin: 1rem 1rem 0 0;
+}
+
+.copyright {
+    font-size: 13px;
+    font-weight: normal;
+    color: #161513;
+    white-space: normal;
+    padding-top: 10px;
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+}
