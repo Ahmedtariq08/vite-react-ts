@@ -34,9 +34,41 @@
 
 .input-fields-container {
     height: 55vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     background-color: var(--bg-grey-white);
 }
+ .hr1 {
+    width: 45%;
+    margin-right: 0.5rem;
+ }
 
+ .hr2 {
+    width: 45%;
+    margin-left: 0.5rem;
+ }
+.or-line-container {
+    display: flex;
+    align-items: end;
+    margin-bottom: 2rem;
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 20%;
+}
+
+.buttons-container * {
+    margin-top: 1rem;
+}
+.sign-in-button {
+    margin-top: 2rem;
+}
 .login-footer {
     display: flex;
     flex-direction: column;
