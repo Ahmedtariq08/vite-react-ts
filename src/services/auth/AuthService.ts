@@ -1,5 +1,5 @@
-import { get, post, put, destroy } from '../api/ApiClient';
-import RestUtil from '../../utils/RestUtils';
+import { get, post, put, destroy } from '@config/api/ApiClient';
+import RestUtil from '@utils/RestUtils';
 
 // ANCHOR - API ENDPOINTS
 const Auth = {
@@ -10,13 +10,8 @@ const Auth = {
 
 class AuthService {
   public static loginUser = async (username: string, password: string) => {
-    const response = await RestUtil.post(
-      'http://localhost:8080/auth/users/authenticate',
-      { username, password }
-    );
+    const response = await Auth.loginUser(username, password);
     console.log(response);
-    // const response = await Auth.loginUser(username, password);
-    // console.log(response);
   };
 
   public static logoutUser = async () => {
