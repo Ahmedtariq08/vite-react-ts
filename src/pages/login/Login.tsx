@@ -1,16 +1,14 @@
-import React, { useState } from 'react';
-import { Button } from '@mui/material';
-import TextField from '@mui/material/TextField';
-import IconButton from '@mui/material/IconButton';
-import Input from '@mui/material/Input';
-import FilledInput from '@mui/material/FilledInput';
-import OutlinedInput from '@mui/material/OutlinedInput';
-import InputLabel from '@mui/material/InputLabel';
-import InputAdornment from '@mui/material/InputAdornment';
-import FormHelperText from '@mui/material/FormHelperText';
-import FormControl from '@mui/material/FormControl';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import { Button } from '@mui/material';
+import FormControl from '@mui/material/FormControl';
+import IconButton from '@mui/material/IconButton';
+import InputAdornment from '@mui/material/InputAdornment';
+import InputLabel from '@mui/material/InputLabel';
+import OutlinedInput from '@mui/material/OutlinedInput';
+import TextField from '@mui/material/TextField';
+import React, { useState } from 'react';
+import AuthService from '../../services/auth/AuthService';
 import './login.css';
 
 function LoginFooter() {
@@ -43,9 +41,9 @@ function Login() {
     event.preventDefault();
   };
 
-  const handleSignIn = () => {
-    console.log(username);
-    console.log(password);
+  const handleSignIn = async () => {
+    const response = await AuthService.loginUser(username, password);
+    console.log(response);
   };
 
   return (
