@@ -1,5 +1,16 @@
+import React, { useState } from 'react';
 import { Button } from '@mui/material';
 import TextField from '@mui/material/TextField';
+import IconButton from '@mui/material/IconButton';
+import Input from '@mui/material/Input';
+import FilledInput from '@mui/material/FilledInput';
+import OutlinedInput from '@mui/material/OutlinedInput';
+import InputLabel from '@mui/material/InputLabel';
+import InputAdornment from '@mui/material/InputAdornment';
+import FormHelperText from '@mui/material/FormHelperText';
+import FormControl from '@mui/material/FormControl';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import './login.css';
 
 function LoginFooter() {
@@ -20,6 +31,23 @@ function LoginFooter() {
 }
 
 function Login() {
+  const [username, setUsername] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const [showPassword, setShowPassword] = React.useState(false);
+
+  const handleClickShowPassword = () => setShowPassword((show) => !show);
+
+  const handleMouseDownPassword = (
+    event: React.MouseEvent<HTMLButtonElement>
+  ) => {
+    event.preventDefault();
+  };
+
+  const handleSignIn = () => {
+    console.log(username);
+    console.log(password);
+  };
+
   return (
     <div className="login-container">
       <div className="signin-container">
@@ -52,15 +80,37 @@ function Login() {
             type="text"
             spellCheck={false}
             required
+            value={username}
+            sx={{ marginTop: '2rem' }}
+            onChange={(e) => setUsername(e.target.value)}
           />
-          <TextField
-            color="primary"
-            variant="outlined"
-            label="Password"
-            type="password"
-            spellCheck={false}
-            required
-          />
+          <FormControl variant="outlined" sx={{ marginTop: '2rem' }}>
+            <InputLabel htmlFor="outlined-adornment-password">
+              Password
+            </InputLabel>
+            <OutlinedInput
+              id="outlined-adornment-password"
+              type={showPassword ? 'text' : 'password'}
+              color="primary"
+              spellCheck={false}
+              required
+              value={password}
+              endAdornment={
+                <InputAdornment position="end">
+                  <IconButton
+                    aria-label="toggle password visibility"
+                    onClick={handleClickShowPassword}
+                    onMouseDown={handleMouseDownPassword}
+                    edge="end"
+                  >
+                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                  </IconButton>
+                </InputAdornment>
+              }
+              label="Password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </FormControl>
           <Button
             color="secondary"
             variant="contained"
@@ -70,7 +120,9 @@ function Login() {
               textTransform: 'none',
               fontWeight: 600,
               fontSize: 'medium',
+              marginTop: '2rem',
             }}
+            onClick={handleSignIn}
           >
             Sign In
           </Button>
