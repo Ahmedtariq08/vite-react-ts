@@ -1,5 +1,4 @@
-import { get, post, put, destroy } from '@config/api/ApiClient';
-import RestUtil from '@utils/RestUtils';
+import { get, post, put, destroy } from '../../config/api/ApiClient';
 
 // ANCHOR - API ENDPOINTS
 const Auth = {

@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
     "target": "ES2020",
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
@@ -20,15 +19,6 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-
-    /* Paths */
-    "paths": {
-      "@utils/*": ["utils/*"],
-      "@services/*": ["services/*"],
-      "@components/*": ["components/*"],
-      "@pages/*": ["pages/*"],
-      "@config/*": ["config/*"]
-    },
   },
   "include": ["vite.config.ts", ".eslintrc.cjs", "src"],
   "references": [{ "path": "./tsconfig.node.json" }]
