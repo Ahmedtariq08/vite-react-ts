@@ -8,6 +8,7 @@ import InputLabel from '@mui/material/InputLabel';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import TextField from '@mui/material/TextField';
 import React, { useState } from 'react';
+import Loader from '../../components/Loader';
 import AuthService from '../../services/auth/AuthService';
 import './login.css';
 
@@ -32,6 +33,7 @@ function Login() {
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [showPassword, setShowPassword] = React.useState(false);
+  const [showLoader, setShowLoader] = useState(false);
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -42,8 +44,9 @@ function Login() {
   };
 
   const handleSignIn = async () => {
+    setShowLoader(true);
     const response = await AuthService.loginUser(username, password);
-    console.log(response);
+    // setShowLoader(false);
   };
 
   return (
@@ -124,6 +127,9 @@ function Login() {
           >
             Sign In
           </Button>
+          <div style={{ marginTop: '2rem' }}>
+            <Loader showLoader={showLoader} />
+          </div>
         </div>
       </div>
       <LoginFooter />
