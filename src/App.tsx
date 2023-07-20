@@ -3,7 +3,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import Login from './pages/login/Login';
 import Dashboard from './pages/dashboard/Dashboard';
 import PageNotFound from './pages/PageNotFound';
-import theme from './styles/mui/theme';
+import theme from './styles/theme';
 
 function App() {
   return (

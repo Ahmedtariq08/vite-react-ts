@@ -9,12 +9,14 @@ import OutlinedInput from '@mui/material/OutlinedInput';
 import TextField from '@mui/material/TextField';
 import React, { useState } from 'react';
 import Loader from '../../components/Loader';
+import NotificationMessage from '../../components/NotificationMessage';
 import AuthService from '../../services/auth/AuthService';
 import './login.css';
 
 function LoginFooter() {
   return (
     <footer className="login-footer">
+      <NotificationMessage />
       <div className="footer-logo">
         <img
           className="logo"

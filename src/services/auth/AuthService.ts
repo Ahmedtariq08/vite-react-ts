@@ -10,6 +10,9 @@ const Auth = {
 class AuthService {
   public static loginUser = async (username: string, password: string) => {
     const response = await Auth.loginUser(username, password);
+    if (response.status == 200) {
+      
+    }
     console.log(response);
   };
 
