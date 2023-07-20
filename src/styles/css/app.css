@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
     --bg-light-black: #312d2a;
     --bg-light-grey: #5c5651;

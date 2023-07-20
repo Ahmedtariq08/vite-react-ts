@@ -22,7 +22,7 @@ function LoginFooter() {
           alt="src/assets/images/gosaas-logo.png"
         />
       </div>
-      <div className="copyright" id="copyright">
+      <div className="text-sm font-normal text-gray-700 whitespace-normal pt-4 w-90vw mx-auto pb-4" id="copyright">
         Copyright(C) 2017, 2022, GoSaaS and/or its affiliates.
       </div>
     </footer>
@@ -46,11 +46,12 @@ function Login() {
   const handleSignIn = async () => {
     setShowLoader(true);
     const response = await AuthService.loginUser(username, password);
-    // setShowLoader(false);
+    console.log(response);
+    setShowLoader(false);
   };
 
   return (
-    <div className="login-container">
+    <div className="flex flex-col justify-between">
       <div className="signin-container">
         <div className="head1">Sign In</div>
         <div className="head2">Environment Government & Compliance</div>
