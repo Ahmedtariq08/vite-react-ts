@@ -1,5 +1,6 @@
-function Dashboard() {
-  return <h1>Dashboard Page</h1>;
+
+const Dashboard = () => {
+  return <div>Dashbaord</div>
 }
 
 export default Dashboard;
